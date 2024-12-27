@@ -1,0 +1,12 @@
+<!-- <p>stacked-bar works!</p>
+<div class="h-56">
+    <div echarts [options]="option" class="w-100" style="height: 100%;" id="container"></div>
+</div> -->
+
+
+
+<div class="w-full grid grid-flow-col grid-cols-10 gap-1">
+    <div class="h-8" *ngFor="let bar of chartData" [ngClass]="bar.class" [style.background-color]="bar.color">
+        <p class="text-center">{{bar.name}}</p>
+    </div>
+</div>
