@@ -1,0 +1,29 @@
+<div class="h-screen w-screen flex flex-col justify-center items-center border">
+    <div class="text-center">
+        <img class="mx-auto w-48 mb-8" src="../../../assets/logo.png">
+    </div>
+    <div class="w-6/12 text-center">
+        <p class="text-center text-lg font-sans mb-2">Please Login</p>
+        <form class="flex flex-col items-center justify-center" [formGroup]="loginForm">
+           
+            <input formControlName="username"
+            type="text"
+            class="peer min-h-[auto] border rounded block w-6/12 px-3 py-[0.32rem] bg-transparent transition-all duration-200 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 mb-5"
+            id="username"
+            placeholder="Username" />
+
+            <input formControlName="password"
+            type="password"
+            class="peer min-h-[auto] border rounded block w-6/12 px-3 py-[0.32rem] bg-transparent transition-all duration-200 peer-focus:text-primary data-[twe-input-state-active]:placeholder:opacity-100 mb-5"
+            id="password"
+            placeholder="Password" />
+
+            <button type="button" 
+            class="login-button inline-block rounded bg-primary px-3 py-3 w-6/12  text-sm font-medium uppercase" 
+            data-twe-ripple-init 
+            data-twe-ripple-color="light"
+            (click)="login()">Log in</button>
+            
+        </form>
+    </div>
+</div>
