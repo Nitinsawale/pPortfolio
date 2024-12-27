@@ -1,1 +1,113 @@
-<p>dashboard works!</p>
+<!-- 
+<div class="grid grid-rows-2 grid-cols-3 p-4 bg-neutral-50">
+
+    <div class="border w-full rounded-xl p-4  h-40 bg-white">
+        <h1 class="text-lg">Total Invested</h1>
+        <div class="flex flex-row justify-start items-center my-12">
+            <h1 class="font-medium text-3xl">{{investmentDetails.totalInvested}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">Rupees</h2>
+        </div>
+    </div>
+
+    <div class="border rounded-xl p-4 w-full  h-40 bg-white">
+        <h1 class="text-lg">Current Value</h1>
+        <div class="flex flex-row justify-start items-center my-12">
+            <h1 class="font-medium text-3xl">{{investmentDetails.currentValue}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">Rupees</h2>
+        </div>
+    </div>
+
+    <div class="border rounded-xl p-4 w-full  h-40 bg-white ">
+        <h1 class="text-lg">Rate of Return</h1>
+        <div class="flex flex-row justify-start items-center my-12">
+            <h1 class="font-medium text-3xl">{{investmentDetails.rateOfReturn}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">%</h2>
+        </div>
+    </div>
+
+    <div class="border rounded bg-white">  
+        <div class="rounded-xl p-4">
+            <h1 class="text-lg">Investment Details</h1>
+            <h6 class="text-xs">Assets you hold</h6>
+            <div class="mt-2 mb-2   flex flex-row justify-between items-center">
+                <h1 class="text-3xl">{{investmentDetails.totalInvested}}</h1>
+                <h5 class="place-items-baseline">5% down</h5>
+            </div>
+        
+            <app-stacked-bar [chartData]="allocationChartData"></app-stacked-bar>
+            <ul class="mt-2">
+                <li *ngFor="let details of allocationChartData" class="flex justify-between flex-row border-b-2 m-1 p-2">
+                    <h3>{{details.name}}</h3>
+                    <h3>{{details.amount}} ({{details.percentage}}%)</h3>
+                </li>
+            </ul>
+        </div> 
+    </div>
+
+    <div class="border rounded-xl col-span-2 bg-white">
+        <app-smoothed-line-chart></app-smoothed-line-chart>
+    </div>
+
+
+
+</div> -->
+
+
+<div class="grid grid-cols-3 gap-4 p-4 ">
+
+    <!-- Total Invested Card -->
+    <div class="border w-full rounded-xl p-4 bg-white">
+        <h1 class="text-lg">Total Invested</h1>
+        <div class="flex flex-row justify-start items-center my-4"> <!-- Adjusted my-12 to my-4 -->
+            <h1 class="font-medium text-3xl">{{investmentDetails.totalInvested}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">Rupees</h2>
+        </div>
+    </div>
+
+    <!-- Current Value Card -->
+    <div class="border rounded-xl p-4 w-full bg-white">
+        <h1 class="text-lg">Current Value</h1>
+        <div class="flex flex-row justify-start items-center my-4"> <!-- Adjusted my-12 to my-4 -->
+            <h1 class="font-medium text-3xl">{{investmentDetails.currentValue}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">Rupees</h2>
+        </div>
+    </div>
+
+    <!-- Rate of Return Card -->
+    <div class="border rounded-xl p-4 w-full bg-white">
+        <h1 class="text-lg">Rate of Return</h1>
+        <div class="flex flex-row justify-start items-center my-4"> <!-- Adjusted my-12 to my-4 -->
+            <h1 class="font-medium text-3xl">{{investmentDetails.rateOfReturn}}</h1>
+            <h2 class="text-xl opacity-30 ml-2">%</h2>
+        </div>
+    </div>
+
+    <!-- Investment Details Card -->
+    <div class="border rounded-xl col-span-3 bg-white">
+        <div class="rounded-xl p-4">
+            <h1 class="text-lg">Investment Details</h1>
+            <h6 class="text-xs">Assets you hold</h6>
+            <div class="mt-4 mb-2 flex flex-row justify-between items-center">
+                <h1 class="text-3xl">{{investmentDetails.totalInvested}}</h1>
+                <h5 class="place-items-baseline">5% down</h5>
+            </div>
+        
+            <app-stacked-bar [chartData]="allocationChartData"></app-stacked-bar>
+            <ul class="mt-2">
+                <li *ngFor="let details of allocationChartData" class="flex justify-between flex-row border-b-2 m-1 p-2">
+                    <h3>{{details.name}}</h3>
+                    <h3>{{details.amount}} ({{details.percentage}}%)</h3>
+                </li>
+            </ul>
+        </div> 
+    </div>
+
+    <!-- Smoothed Line Chart -->
+    <div class="border rounded-xl col-span-3 bg-white p-4">
+        <h1 class="text-lg">Portfolio Performance</h1>
+        <h6 class="text-xs">your portfolio performance throughout year</h6>
+        <app-smoothed-line-chart></app-smoothed-line-chart>
+    </div>
+
+</div>
+
